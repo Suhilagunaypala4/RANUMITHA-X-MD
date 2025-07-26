@@ -64,7 +64,7 @@ let madeMenu = `👋 *ʜᴇʟʟᴏ* ${pushname}
 *│* 👤 *User*: ${pushname}
 *│* 🤵‍♂ Owner: *ᴴᴵᴿᵁᴷᴬ ᴿᴬᴺᵁᴹᴵᵀᴴᴬ*
 *│* ⏰ Uptime: 14 minutes, 15 seconds
-*│* ⏳ Ram: 363.24MB / 63276.48MB
+*│* ⏳ Ram: 363.24MB/63276.48MB
 *│* 🖊️ Prefix: .
 ╰──────────●●► 
 
