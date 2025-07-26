@@ -57,15 +57,15 @@ cmd(
         }
       }
 
-      let madeMenu = `👋 *ʜᴇʟʟᴏ* ${pushname}
+let madeMenu = `👋 *ʜᴇʟʟᴏ* ${pushname}
 
 *╭─「 MENU 」*
-*│*🐼 *`Bot`*: *𝐑𝐀𝐍𝐔𝐌𝐈𝐓𝐇𝐀-𝐗-𝐌𝐃*
-*│*👤 *`User`*: 
-*│*🤵‍♂ *`Owner`*: *ᴴᴵᴿᵁᴷᴬ ᴿᴬᴺᵁᴹᴵᵀᴴᴬ*
-*│*⏰ *`Uptime`*: 14 minutes, 15 seconds
-*│*⏳ *`Ram`*: 363.24MB / 63276.48MB
-*│*🖊️ *`Prefix`*: .
+*│* 🐼 *Bot*: *𝐑𝐀𝐍𝐔𝐌𝐈𝐓𝐇𝐀-𝐗-𝐌𝐃*
+*│* 👤 *User*: ${pushname}
+*│* 🤵‍♂ Owner*: *ᴴᴵᴿᵁᴷᴬ ᴿᴬᴺᵁᴹᴵᵀᴴᴬ*
+*│* ⏰ Uptime: 14 minutes, 15 seconds
+*│* ⏳ Ram: 363.24MB / 63276.48MB
+*│* 🖊️ Prefix: .
 ╰──────────●●► 
 
 👾 Ξ *MAIN COMMANDS:* Ξ
