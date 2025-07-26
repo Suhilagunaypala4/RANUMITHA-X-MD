@@ -62,7 +62,7 @@ let madeMenu = `👋 *ʜᴇʟʟᴏ* ${pushname}
 *╭─「 MENU 」*
 *│* 🐼 *Bot*: *𝐑𝐀𝐍𝐔𝐌𝐈𝐓𝐇𝐀-𝐗-𝐌𝐃*
 *│* 👤 *User*: ${pushname}
-*│* 🤵‍♂ Owner*: *ᴴᴵᴿᵁᴷᴬ ᴿᴬᴺᵁᴹᴵᵀᴴᴬ*
+*│* 🤵‍♂ Owner: *ᴴᴵᴿᵁᴷᴬ ᴿᴬᴺᵁᴹᴵᵀᴴᴬ*
 *│* ⏰ Uptime: 14 minutes, 15 seconds
 *│* ⏳ Ram: 363.24MB / 63276.48MB
 *│* 🖊️ Prefix: .
@@ -100,7 +100,6 @@ ${menu.group}
         ▫️.url <img/video/audio>
         ▫️.tts <text>
 ${menu.search}
-
 > 𝐏𝐨𝐰𝐞𝐫𝐝 𝐛𝐲 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 💎
 `;
       await robin.sendMessage(
