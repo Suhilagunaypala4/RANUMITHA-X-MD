@@ -1,3 +1,5 @@
+const { cmd } = require('../command');
+const config = require('../config');
 const ytdl = require('ytdl-core');
 const fs = require('fs');
 
