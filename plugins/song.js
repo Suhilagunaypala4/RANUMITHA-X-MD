@@ -1,5 +1,3 @@
-
-```js
 const ytdl = require('ytdl-core');
 const yts = require('yt-search');
 const fs = require('fs');
@@ -29,5 +27,4 @@ module.exports = {
     });
   },
 };
-```
 
