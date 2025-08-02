@@ -50,7 +50,12 @@ async (robin, mek, m, {
         await robin.sendMessage(from, {
             image: {
                 url: "https://raw.githubusercontent.com/Ranumithaofc/RANU-FILE-S-/refs/heads/main/images/GridArt_20250726_193256660.jpg" // You can replace this with your own ALIVE_IMG URL
-            }, { quoted: mek });
+            },
+            caption: status,
+                    serverMessageId: 143
+                }
+            }
+        }, { quoted: mek });
 
     } catch (e) {
         console.log("Alive Error:", e);
