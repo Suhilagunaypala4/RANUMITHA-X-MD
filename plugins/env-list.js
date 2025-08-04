@@ -74,7 +74,7 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
         await conn.sendMessage(
             from,
             {
-                image: { url: config.MENU_IMAGE_URL },
+                image: { url: "https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/images/Config%20img%20.jpg" },
                 caption: envSettings,
                 contextInfo: {
                     mentionedJid: [m.sender],
