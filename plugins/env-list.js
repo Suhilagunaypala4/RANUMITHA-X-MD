@@ -88,7 +88,7 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
         await conn.sendMessage(
             from,
             {
-                audio: { url: 'https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/songs-audios/Leo%20Rojas%20-%20Der%20einsame%20Hirte.mp3' },
+                audio: { url: 'https://github.com/Ranumithaofc/RANU-FILE-S-/raw/refs/heads/main/Audio/Hi.mp3' },
                 mimetype: 'audio/mp4',
                 ptt: true
             },
