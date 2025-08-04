@@ -10,7 +10,7 @@ function isEnabled(value) {
 
 cmd({
     pattern: "env",
-    alias: ["config", "settings"],
+    alias: ["config", "settings", "setting"],
     desc: "Show all bot configuration variables (Owner Only)",
     category: "system",
     react: "⚙️",
@@ -20,7 +20,7 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
     try {
         // Owner check
         if (!isOwner) {
-            return reply("🚫 *Owner Only Command!* You're not authorized to view bot configurations.");
+            return reply("🚫 *Owner Only Command!*");
         }
 
         const isEnabled = (value) => value && value.toString().toLowerCase() === "true";
