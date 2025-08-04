@@ -78,7 +78,7 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
                 contextInfo: {
                     mentionedJid: [m.sender],
                     forwardingScore: 999,
-                    isForwarded: true
+                    isForwarded: false
                 }
             },
             { quoted: mek }
@@ -88,7 +88,7 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
         await conn.sendMessage(
             from,
             {
-                audio: { url: 'https://files.catbox.moe/lcqjit.mp3' },
+                audio: { url: 'https://files.catbox.moe/ag9l0x.mp3' },
                 mimetype: 'audio/mp4',
                 ptt: true
             },
