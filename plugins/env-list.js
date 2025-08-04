@@ -16,10 +16,10 @@ cmd({
     react: "⚙️",
     filename: __filename
 }, 
-async (conn, mek, m, { from, quoted, reply, isCreator }) => {
+async (conn, mek, m, { from, quoted, reply, isOwner }) => {
     try {
         // Owner check
-        if (!isCreator) {
+        if (!isOwner) {
             return reply("🚫 *Owner Only Command!* You're not authorized to view bot configurations.");
         }
 
