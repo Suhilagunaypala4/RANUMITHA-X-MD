@@ -31,7 +31,7 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
 ├─❏ *🤖 BOT INFO*
 │  ├─∘ *Name:* ${config.BOT_NAME}
 │  ├─∘ *Prefix:* ${config.PREFIX}
-│  ├─∘ *Owner:* ${config.OWNER_NAME}
+│  ├─∘ *Owner:* ᴴᴵᴿᵁᴷᴬ ᴿᴬᴺᵁᴹᴵᵀᴴᴬ
 │  ├─∘ *Number:* ${config.OWNER_NUMBER}
 │  └─∘ *Mode:* ${config.MODE.toUpperCase()}
 │
@@ -57,8 +57,7 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
 │  └─∘ *Anti-VV:* ${isEnabled(config.ANTI_VV) ? "✅" : "❌"} 
 │
 ├─❏ *🎨 MEDIA*
-│  ├─∘ *Alive Img:* ${config.ALIVE_IMG}
-│  ├─∘ *Alive Msg:* ${config.LIVE_MSG}
+│  ├─∘ *Alive Msg:* ${config.ALIVE_MSG}
 │  └─∘ *Sticker Pack:* ${config.STICKER_NAME}
 │
 ├─❏ *⏳ MISC*
@@ -67,7 +66,9 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
 │  ├─∘ *Anti-Del Path:* ${config.ANTI_DEL_PATH}
 │  └─∘ *Dev Number:* ${config.DEV}
 │
-╰───『 *${config.DESCRIPTION}* 』───❏
+╰──────❏
+
+> © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛
 `;
 
         await conn.sendMessage(
