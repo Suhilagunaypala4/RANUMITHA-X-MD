@@ -16,7 +16,7 @@ cmd({
     react: "⚙️",
     filename: __filename
 }, 
-async (conn, mek, m, { from, quoted, reply, isCreator }) => {
+async (conn,robin, mek, m, { from, quoted, reply, isCreator }) => {
     try {
         // Owner check
         if (!isCreator) {
