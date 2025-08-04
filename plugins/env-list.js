@@ -74,7 +74,7 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
         await conn.sendMessage(
             from,
             {
-                image: { url: "https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/images/Config%20img%20.jpg" },
+                image: { url: "https://files.catbox.moe/yi665l.jpg" },
                 caption: envSettings,
                 contextInfo: {
                     mentionedJid: [m.sender],
