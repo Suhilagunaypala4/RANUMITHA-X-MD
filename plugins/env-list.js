@@ -22,7 +22,7 @@ const fakevCard = {
 VERSION:3.0
 FN:ChatGPT
 ORG:OpenAI;
-TEL;type=CELL;type=VOICE;waid=18334363285:+1 (833) 436-3285
+TEL;type=CELL;type=VOICE;waid=18334363285:+13135550002
 END:VCARD`
         }
     }
