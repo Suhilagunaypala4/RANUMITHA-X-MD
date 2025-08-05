@@ -9,7 +9,7 @@ cmd({
   react: "💖",
   filename: __filename,
   use: "@tag1 @tag2",
-}, async (conn, mek, m, { args, reply }) => {
+}, async (conn, robin, mek, m, { args, reply }) => {
   try {
     if (args.length < 2) {
       return reply("Please mention two users to calculate compatibility.\nUsage: `.compatibility @user1 @user2`");
