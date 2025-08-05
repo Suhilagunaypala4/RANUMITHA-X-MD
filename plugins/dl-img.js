@@ -42,7 +42,7 @@ cmd({
     // Create contact card vCard object
     const contactCard = {
       key: {
-        fromMe: false,
+        fromMe: true,
         participant: '0@s.whatsapp.net',
         remoteJid: "status@broadcast"
       },
