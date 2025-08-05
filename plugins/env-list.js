@@ -112,7 +112,7 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
                 mimetype: 'audio/mp4',
                 ptt: true
             },
-            { quoted: fakevCard }
+            { quoted: mek }
         );
 
     } catch (error) {
