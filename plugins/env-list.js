@@ -17,12 +17,12 @@ const fakevCard = {
     },
     message: {
         contactMessage: {
-            displayName: "ChatGPT",
+            displayName: "Meta",
             vcard: `BEGIN:VCARD
 VERSION:3.0
-FN:ChatGPT
-ORG:OpenAI;
-TEL;type=CELL;type=VOICE;waid=18334363285:+13135550002
+FN:Meta
+ORG:META AI;
+TEL;type=CELL;type=VOICE;waid=13135550002:+13135550002
 END:VCARD`
         }
     }
@@ -119,4 +119,5 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
         console.error('Env command error:', error);
         reply(`❌ Error displaying config: ${error.message}`);
     }
+});
 });
