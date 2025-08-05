@@ -1,6 +1,7 @@
-constconst { cmd } = require("../command");
-const config = require('../config');
-
+const { cmd } = require("../command");
+const { fetchEmix } = require("../lib/emix-utils");
+const { getBuffer } = require("../lib/functions");
+const { Sticker, StickerTypes } = require("wa-sticker-formatter");
 
 cmd({
     pattern: "emix",
@@ -30,7 +31,7 @@ cmd({
         let buffer = await getBuffer(imageUrl);
         let sticker = new Sticker(buffer, {
             pack: "Emoji Mix",
-            author: "𝙳𝙰𝚁𝙺-𝙺𝙽𝙸𝙶𝙷𝚃-𝚇𝙼𝙳",
+            author: "WHITESHADOW-MD",
             type: StickerTypes.FULL,
             categories: ["🤩", "🎉"],
             quality: 75,
