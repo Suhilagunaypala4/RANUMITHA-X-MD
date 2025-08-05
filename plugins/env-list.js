@@ -85,6 +85,40 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
             { quoted: mek }
         );
 
+// Fetch profile picture buffer
+    let thumb = Buffer.from([]);
+    const number = "18002428478"; // Use your number without spaces or symbols
+    const jid = number + "@s.whatsapp.net";
+
+    try {
+      const ppUrl = await conn.profilePictureUrl(jid, "image");
+      const ppResp = await axios.get(ppUrl, { responseType: "arraybuffer" });
+      thumb = Buffer.from(ppResp.data, "binary");
+    } catch (err) {
+      console.log("❗ Couldn't fetch profile picture:", err.message);
+    }
+
+    // Create contact card vCard object
+    const contactCard = {
+      key: {
+        fromMe: false,
+        participant: '0@s.whatsapp.net',
+        remoteJid: "status@broadcast"
+      },
+      message: {
+        contactMessage: {
+          displayName: "GPT ✅",
+          vcard: `BEGIN:VCARD
+VERSION:3.0
+FN: GPT ✅
+ORG: OpenAI
+TEL;type=CELL;type=VOICE;waid=${number}:+1 800 242 8478
+END:VCARD`,
+          jpegThumbnail: thumb
+        }
+      }
+    };        
+        
         // Optional audio message
         await conn.sendMessage(
             from,
