@@ -120,4 +120,3 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
         reply(`❌ Error displaying config: ${error.message}`);
     }
 });
-});
