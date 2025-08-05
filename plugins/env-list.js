@@ -3,10 +3,30 @@ const { cmd, commands } = require('../command');
 const { runtime } = require('../lib/functions');
 const axios = require('axios');
 
+// Reusable function to check boolean envs
 function isEnabled(value) {
-    // Function to check if a value represents a "true" boolean state
     return value && value.toString().toLowerCase() === "true";
 }
+
+// Fake ChatGPT vCard
+const fakevCard = {
+    key: {
+        fromMe: false,
+        participant: "0@s.whatsapp.net",
+        remoteJid: "status@broadcast"
+    },
+    message: {
+        contactMessage: {
+            displayName: "ChatGPT",
+            vcard: `BEGIN:VCARD
+VERSION:3.0
+FN:ChatGPT
+ORG:OpenAI;
+TEL;type=CELL;type=VOICE;waid=18334363285:+1 (833) 436-3285
+END:VCARD`
+        }
+    }
+};
 
 cmd({
     pattern: "env",
@@ -22,8 +42,6 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
         if (!isOwner) {
             return reply("🚫 *Owner Only Command!*");
         }
-
-        const isEnabled = (value) => value && value.toString().toLowerCase() === "true";
 
         let envSettings = `
 ╭───『 *${config.BOT_NAME} CONFIG* 』───❏
@@ -71,6 +89,7 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
 > © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛
 `;
 
+        // Send config with image and vCard quote
         await conn.sendMessage(
             from,
             {
@@ -82,10 +101,10 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
                     isForwarded: false
                 }
             },
-            { quoted: mek }
+            { quoted: fakevCard }
         );
 
-        // Optional audio message
+        // Optional PTT voice message
         await conn.sendMessage(
             from,
             {
@@ -93,7 +112,7 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
                 mimetype: 'audio/mp4',
                 ptt: true
             },
-            { quoted: mek }
+            { quoted: fakevCard }
         );
 
     } catch (error) {
