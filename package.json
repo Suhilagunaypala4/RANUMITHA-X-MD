@@ -27,7 +27,6 @@
     "mongoose": "latest",
     "fb-downloader-scrapper": "latest",
     "canvas": "^3.1.2",
-    "wa-sticker-formatter": "^4.4.4",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@dark-yasiya/yt-dl.js": "1.0.5",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
