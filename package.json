@@ -9,7 +9,7 @@
     "restart": "pm2 restart RANUMITHA-X-MD"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "npm:baileys-pro@latest",
+    "@whiskeysockets/baileys": "^6.7.18",
     "pino": "latest",
     "pm2": "latest",
     "util": "^0.12.5",
