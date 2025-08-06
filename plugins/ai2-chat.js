@@ -42,7 +42,8 @@ async (conn, mek, m, { from, args, q, reply, react }) => {
             return reply("Gemini AI failed to respond. Please try again later.");
         }
 
-        await reply(`✨ *Gemini AI Response:*\n\n${data.result}` , { quoted: contactCard });
+        await reply(`✨ *Gemini AI Response:*\n\n${data.result}`
+        }, { quoted: contactCard });
         await react("✅");
     } catch (e) {
         console.error("Error in Gemini AI command:", e);
