@@ -31,7 +31,7 @@ cmd({
 }, async (conn, m, store, { from, quoted, args, q, reply }) => {
   try {
     if (!q) {
-      return reply("❎ Please provide text to convert into fancy fonts.\n\n*Example:* .fancy chamod nimsara");
+      return reply("❎ Please provide text to convert into fancy fonts.\n\n*Example:* .fancy *text*");
     }
 
     const apiUrl = `https://www.dark-yasiya-api.site/other/font?text=${encodeURIComponent(q)}`;
@@ -44,7 +44,7 @@ cmd({
     const fonts = response.data.result.map(item => `*${item.name}:*\n${item.result}`).join("\n\n");
     const resultText = `✨ *Fancy Fonts Converter* ✨\n\n${fonts}\n\n> © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`;
 
-    await conn.sendMessage(from, { text: resultText }, { quoted: m }, { quoted: fakevCard });
+    await conn.sendMessage(from, { quoted: fakevCard }, { text: resultText }, { quoted: m });
   } catch (error) {
     console.error("❌ Error in fancy command:", error);
     reply("⚠️ An error occurred while fetching fonts.");
