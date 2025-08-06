@@ -1,3 +1,4 @@
+const config = require('../config');
 const { cmd } = require('../command');
 const axios = require('axios');
 
@@ -35,8 +36,8 @@ async (conn, mek, m, { from, args, q, reply, react }) => {
         if (!q) return reply("Please provide a message for Gemini AI.\nExample: `.ai2 ඔයා හැදුවෙ කවුද`");
 
         const apiUrl = `https://lakiya-api-site.vercel.app/ai/gemini?q=${encodeURIComponent(q)}&CREATOR=RANUMITHA`;
-        const { data } = await axios.get(apiUrl);
-
+        const { data } = await axios.get(apiUrl), { quoted: fakevCard });
+        
         if (!data || !data.result) {
             await react("❌");
             return reply("Gemini AI failed to respond. Please try again later.");
@@ -44,11 +45,9 @@ async (conn, mek, m, { from, args, q, reply, react }) => {
 
         await reply(`✨ *Gemini AI Response:*\n\n${data.result}`);
         await react("✅");
-        await { quoted: fakevCard });
-        
-    } catch (e) {
+     catch (e) {
         console.error("Error in Gemini AI command:", e);
         await react("❌");
         reply("An error occurred while communicating with Gemini AI.");
     }
-})
+});
