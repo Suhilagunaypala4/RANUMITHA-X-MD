@@ -43,10 +43,12 @@ async (conn, mek, m, { from, args, q, reply, react }) => {
         }
 
         await reply(`✨ *Gemini AI Response:*\n\n${data.result}`);
-        await react("✅"), { quoted: fakevCard }; 
+        await react("✅");
+        const { quoted: mek });
+        
     } catch (e) {
         console.error("Error in Gemini AI command:", e);
         await react("❌");
         reply("An error occurred while communicating with Gemini AI.");
     }
-});
+})
