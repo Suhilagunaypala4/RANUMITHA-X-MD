@@ -58,7 +58,7 @@ async(conn, fakevcard, m, {
     await conn.sendMessage(from, {
       image: { url: fb.result.thumb },
       caption : caption,
-      }, fakevCard);
+      }, { quoted: fakevCard });
   }
 
     if (fb.result.sd) {
