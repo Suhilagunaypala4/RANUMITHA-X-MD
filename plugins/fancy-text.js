@@ -31,7 +31,7 @@ cmd({
 }, async (conn, m, store, { from, quoted, args, q, reply }) => {
   try {
     if (!q) {
-      return reply("❎ Please provide text to convert into fancy fonts.\n\n*Example:* .fancy *text*");
+      return reply("❎ Please provide text to convert into fancy fonts.\n\n*Example:* .fancy *text*"),{ quoted: fakevCard };
     }
 
     const apiUrl = `https://www.dark-yasiya-api.site/other/font?text=${encodeURIComponent(q)}`;
