@@ -46,7 +46,7 @@ async (conn, mek, m, { from, args, q, reply, react }) => {
       },
       message: {
         contactMessage: {
-          displayName: "GPT ✅",
+          displayName: "GPT 3✅",
           vcard: `BEGIN:VCARD
 VERSION:3.0
 FN: GPT ✅
