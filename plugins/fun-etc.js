@@ -2,6 +2,27 @@ const axios = require("axios");
 const { cmd } = require("../command");
 const { fetchGif, gifToVideo } = require("../lib/fetchGif");
 
+// Fake ChatGPT vCard
+const fakevCard = {
+    key: {
+        fromMe: false,
+        participant: "0@s.whatsapp.net",
+        remoteJid: "status@broadcast"
+    },
+    message: {
+        contactMessage: {
+            displayName: "© Mr Hiruka",
+            vcard: `BEGIN:VCARD
+VERSION:3.0
+FN:Meta
+ORG:META AI;
+TEL;type=CELL;type=VOICE;waid=13135550002:+13135550002
+END:VCARD`
+        }
+    }
+};
+
+
 cmd({
   pattern: "marige",
   alias: ["shadi", "marriage", "wedding"],
@@ -44,7 +65,7 @@ cmd({
         gifPlayback: true, 
         mentions: [sender, randomPair] 
       },
-      { quoted: mek }
+      { quoted: fakevCard }
     );
 
   } catch (error) {
