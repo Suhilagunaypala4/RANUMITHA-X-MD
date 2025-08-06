@@ -35,7 +35,7 @@ cmd({
   use: '.facebook <facebook_url>',
   filename: __filename
 },
-async(conn, fakevcard, m, {
+async(conn, mek, m, {
     from, prefix, q, reply
 }) => {
   try {
