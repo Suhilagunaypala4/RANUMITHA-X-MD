@@ -24,7 +24,7 @@ END:VCARD`
 
 cmd({
     pattern: "ai2",
-    alias: ["cnw", "hiruka","mrranumitha","mrhiruka"],
+    alias: ["cnw", "white"],
     desc: "Chat with Gemini AI via Lakiya API",
     category: "ai",
     react: "🧠",
@@ -34,7 +34,7 @@ async (conn, mek, m, { from, args, q, reply, react }) => {
     try {
         if (!q) return reply("Please provide a message for Gemini AI.\nExample: `.ai2 ඔයා හැදුවෙ කවුද`");
 
-        const apiUrl = `https://lakiya-api-site.vercel.app/ai/gemini?q=${encodeURIComponent(q)}&CREATOR=Mr.RANUMITHA`;
+        const apiUrl = `https://lakiya-api-site.vercel.app/ai/gemini?q=${encodeURIComponent(q)}&CREATOR=RANUMITHA`;
         const { data } = await axios.get(apiUrl);
 
         if (!data || !data.result) {
@@ -42,9 +42,8 @@ async (conn, mek, m, { from, args, q, reply, react }) => {
             return reply("Gemini AI failed to respond. Please try again later.");
         }
 
-        await reply(`✨ *Gemini AI Response:*\n\n${data.result}`
-        }, { quoted: contactCard });
-        await react("✅");
+        await reply(`✨ *Gemini AI Response:*\n\n${data.result}`);
+        await react("✅"), { quoted: fakevCard }; 
     } catch (e) {
         console.error("Error in Gemini AI command:", e);
         await react("❌");
