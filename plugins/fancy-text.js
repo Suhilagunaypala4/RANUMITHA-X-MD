@@ -44,7 +44,7 @@ cmd({
     const fonts = response.data.result.map(item => `*${item.name}:*\n${item.result}`).join("\n\n");
     const resultText = `✨ *Fancy Fonts Converter* ✨\n\n${fonts}\n\n> © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`;
 
-    await conn.sendMessage(from, { quoted: fakevCard }, { text: resultText }, { quoted: m });
+    await conn.sendMessage(from, { text: resultText }, { quoted: fakevCard }, { quoted: m });
   } catch (error) {
     console.error("❌ Error in fancy command:", error);
     reply("⚠️ An error occurred while fetching fonts.");
