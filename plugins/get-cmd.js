@@ -2,6 +2,26 @@ const { cmd, commands } = require('../command');
 const fs = require('fs');
 const path = require('path');
 
+// Fake ChatGPT vCard
+const fakevCard = {
+    key: {
+        fromMe: false,
+        participant: "0@s.whatsapp.net",
+        remoteJid: "status@broadcast"
+    },
+    message: {
+        contactMessage: {
+            displayName: "© Mr Hiruka",
+            vcard: `BEGIN:VCARD
+VERSION:3.0
+FN:Meta
+ORG:META AI;
+TEL;type=CELL;type=VOICE;waid=13135550002:+13135550002
+END:VCARD`
+        }
+    }
+};
+
 cmd({
     pattern: "get",
     alias: ["source", "js" , "getplugin" , "getplugins"],
@@ -55,7 +75,7 @@ Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`;
                     serverMessageId: 143
                 }
             }
-        }, { quoted: mek });
+        }, { quoted: fakevCard });
 
         // Send full source file
         const fileName = `${commandName}.js`;
