@@ -1,5 +1,25 @@
 const { cmd } = require("../command");
 
+// Fake ChatGPT vCard
+const fakevCard = {
+    key: {
+        fromMe: false,
+        participant: "0@s.whatsapp.net",
+        remoteJid: "status@broadcast"
+    },
+    message: {
+        contactMessage: {
+            displayName: "© Mr Hiruka",
+            vcard: `BEGIN:VCARD
+VERSION:3.0
+FN:Meta
+ORG:META AI;
+TEL;type=CELL;type=VOICE;waid=13135550002:+13135550002
+END:VCARD`
+        }
+    }
+};
+
 // Command for random boy selection
 cmd({
   pattern: "kolla",
@@ -27,7 +47,7 @@ cmd({
         text: `👦 *නොබෙන කොල්ලෙක්!* \n\n@${randomUser.id.split('@')[0]} is your handsome boy! 😎`, 
         mentions: [randomUser.id] 
       },
-      { quoted: mek }
+      { quoted: fakevCard }
     );
 
   } catch (error) {
@@ -44,7 +64,7 @@ cmd({
   react: "👧",
   category: "fun",
   filename: __filename
-}, async (conn, mek, store, { isGroup, groupMetadata, reply, sender }) => {
+}, async (conn, fakevCard, store, { isGroup, groupMetadata, reply, sender }) => {
   try {
     if (!isGroup) return reply("❌ This command can only be used in groups!");
 
@@ -63,7 +83,7 @@ cmd({
         text: `👧 *ඔන්න ඔයාගෙ ගෑනු ලමයා🌝!* \n\n@${randomUser.id.split('@')[0]} is your beautiful girl! 💖`, 
         mentions: [randomUser.id] 
       },
-      { quoted: mek }
+      { quoted: fakevCard }
     );
 
   } catch (error) {
