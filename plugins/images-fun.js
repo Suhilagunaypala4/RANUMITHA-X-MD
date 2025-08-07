@@ -68,7 +68,7 @@ let res = await axios.get('https://api.waifu.pics/sfw/waifu')
 let wm = `🩵 Random Waifu image
 
 > © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`
-await conn.sendMessage(from, { image: { url: res.data.url }, caption: wm}, { quoted: mek })
+await conn.sendMessage(from, { image: { url: res.data.url }, caption: wm}, { quoted: fakevCard })
 } catch (e) {
 reply(cants)
 console.log(e)
