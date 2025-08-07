@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 
 cmd({
   pattern: 'gitclone',
-  alias: ["git" , "gitrepoclone"],
+  alias: ["git"],
   desc: "Download GitHub repository as a zip file.",
   react: '📦',
   category: "downloader",
@@ -43,7 +43,7 @@ cmd({
     const fileName = contentDisposition ? contentDisposition.match(/filename=(.*)/)[1] : `${repo}.zip`;
 
     // Notify user of the download
-    reply(`📥 *Downloading repository...*\n\n*Repository:* ${username}/${repo}\n*Filename:* ${fileName}\n\n> © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`);
+    reply(`📥 *Downloading repository...*\n\n*Repository:* ${username}/${repo}\n*Filename:* ${fileName}\n\n> *Powered by 𝙳𝙰𝚁𝙺-𝙺𝙽𝙸𝙶𝙷𝚃-𝚇𝙼𝙳*`);
 
     // Send the zip file to the user with custom contextInfo
     await conn.sendMessage(from, {
@@ -53,10 +53,10 @@ cmd({
       contextInfo: {
         mentionedJid: [m.sender],
         forwardingScore: 999,
-        isForwarded: false,
+        isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterJid: '',
-          newsletterName: '',
+          newsletterJid: '120363400240662312@newsletter',
+          newsletterName: '𝙳𝙰𝚁𝙺-𝙺𝙽𝙸𝙶𝙷𝚃-𝚇𝙼𝙳',
           serverMessageId: 143
         }
       }
