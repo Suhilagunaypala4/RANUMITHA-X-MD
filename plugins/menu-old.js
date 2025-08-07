@@ -4,6 +4,26 @@ const { runtime } = require('../lib/functions');
 const os = require("os");
 const axios = require('axios');
 
+// Fake ChatGPT vCard
+const fakevCard = {
+    key: {
+        fromMe: false,
+        participant: "0@s.whatsapp.net",
+        remoteJid: "status@broadcast"
+    },
+    message: {
+        contactMessage: {
+            displayName: "© Mr Hiruka",
+            vcard: `BEGIN:VCARD
+VERSION:3.0
+FN:Meta
+ORG:META AI;
+TEL;type=CELL;type=VOICE;waid=13135550002:+13135550002
+END:VCARD`
+        }
+    }
+};
+
 cmd({
     pattern: "menu3",
     desc: "menu the bot",
@@ -46,7 +66,7 @@ async (conn, mek, m, { from, sender, pushname, reply }) => {
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/images/GridArt_Red.jpg` },
+                image: { url: `https://files.catbox.moe/j2t4hm.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -59,12 +79,12 @@ async (conn, mek, m, { from, sender, pushname, reply }) => {
                     }
                 }
             },
-            { quoted: mek }
+            { quoted: fakevCard }
         );
 
         // Send cool voice note with context
         await conn.sendMessage(from, {
-            audio: { url: 'https://files.catbox.moe/a43ojv.mp3' },
+            audio: { url: 'https://files.catbox.moe/j2t4hm.jpg' },
             mimetype: 'audio/mp4',
             ptt: true,
             contextInfo: {
@@ -77,7 +97,7 @@ async (conn, mek, m, { from, sender, pushname, reply }) => {
                     serverMessageId: 143
                 }
             }
-        }, { quoted: mek });
+        }, { quoted: fakevCard });
 
     } catch (e) {
         console.error(e);
@@ -134,7 +154,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/images/GridArt_Red.jpg` },
+                image: { url: `https://files.catbox.moe/j2t4hm.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -147,7 +167,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     }
                 }
             },
-            { quoted: mek }
+            { quoted: fakevCard }
         );
 
     } catch (e) {
@@ -200,7 +220,7 @@ async (conn, mek, m, { from, quoted, reply }) => {
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/images/GridArt_Red.jpg` },
+                image: { url: `https://files.catbox.moe/j2t4hm.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -213,7 +233,7 @@ async (conn, mek, m, { from, quoted, reply }) => {
                     }
                 }
             },
-            { quoted: mek }
+            { quoted: fakevCard }
         );
 
     } catch (e) {
@@ -283,7 +303,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/images/GridArt_Red.jpg` },
+                image: { url: `https://files.catbox.moe/j2t4hm.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -296,7 +316,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     }
                 }
             },
-            { quoted: mek }
+            { quoted: fakevCard }
         );
 
     } catch (e) {
@@ -361,7 +381,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/images/GridArt_Red.jpg` },
+                image: { url: `https://files.catbox.moe/j2t4hm.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -374,7 +394,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     }
                 }
             },
-            { quoted: mek }
+            { quoted: fakevCard }
         );
 
     } catch (e) {
@@ -428,7 +448,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/images/GridArt_Red.jpg` },
+                image: { url: `https://files.catbox.moe/j2t4hm.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -441,7 +461,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     }
                 }
             },
-            { quoted: mek }
+            { quoted: fakevCard }
         );
 
     } catch (e) {
@@ -499,7 +519,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/images/GridArt_Red.jpg` },
+                image: { url: `https://files.catbox.moe/j2t4hm.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -512,7 +532,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     }
                 }
             },
-            { quoted: mek }
+            { quoted: fakevCard }
         );
 
     } catch (e) {
@@ -551,7 +571,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/images/GridArt_Red.jpg` },
+                image: { url: `https://files.catbox.moe/j2t4hm.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -564,7 +584,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     }
                 }
             },
-            { quoted: mek }
+            { quoted: fakevCard }
         );
 
     } catch (e) {
@@ -610,7 +630,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/images/GridArt_Red.jpg` },
+                image: { url: `https://files.catbox.moe/j2t4hm.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -623,7 +643,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     }
                 }
             },
-            { quoted: mek }
+            { quoted: fakevCard }
         );
 
     } catch (e) {
@@ -671,7 +691,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/images/GridArt_Red.jpg` },
+                image: { url: `https://files.catbox.moe/j2t4hm.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -684,7 +704,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     }
                 }
             },
-            { quoted: mek }
+            { quoted: fakevCard }
         );
 
     } catch (e) {
@@ -740,7 +760,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/images/GridArt_Red.jpg` },
+                image: { url: `https://files.catbox.moe/j2t4hm.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -753,7 +773,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     }
                 }
             },
-            { quoted: mek }
+            { quoted: fakevCard }
         );
 
     } catch (e) {
@@ -799,7 +819,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/images/GridArt_Red.jpg` },
+                image: { url: `https://files.catbox.moe/j2t4hm.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -812,7 +832,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     }
                 }
             },
-            { quoted: mek }
+            { quoted: fakevCard }
         );
 
     } catch (e) {
