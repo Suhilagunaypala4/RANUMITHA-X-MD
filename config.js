@@ -15,7 +15,7 @@ module.exports = {
   AUTO_VOICE: process.env.AUTO_VOICE || "true",
   AUTO_STICKER: process.env.AUTO_STICKER || "true",
   AUTO_REPLY: process.env.AUTO_REPLY || "true",
-  ALWAYS_ONLINE: process.env.ALWAYS_ONLINE || "false",
+  ALWAYS_ONLINE: process.env.ALWAYS_ONLINE || "true",
   AUTO_RECORDING: process.env.AUTO_RECORDING || "false",
   AUTO_TYPING: process.env.AUTO_TYPING || "false",
   READ_MESSAGE: process.env.READ_MESSAGE || "false",
