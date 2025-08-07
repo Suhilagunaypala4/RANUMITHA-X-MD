@@ -64,7 +64,7 @@ cmd({
   react: "👧",
   category: "fun",
   filename: __filename
-}, async (conn, fakevCard, store, { isGroup, groupMetadata, reply, sender }) => {
+}, async (conn, mek, store, { isGroup, groupMetadata, reply, sender }) => {
   try {
     if (!isGroup) return reply("❌ This command can only be used in groups!");
 
