@@ -110,7 +110,10 @@ let madeMenu = `👋 *ʜᴇʟʟᴏ* ${pushname}
         ▫️.add <user nub>
         ▫️.mute <group Inside>
         ▫️.unmute <group Inside>
-${menu.group}👨‍💻 Ξ *OWNER COMMANDS:* Ξ
+        ▫️.antilink <group Inside>
+        ▫️.antilinkkick <group Inside>
+        ▫️.deletelink <group Inside>
+👨‍💻 Ξ *OWNER COMMANDS:* Ξ
         ▫️.shutdown
         ▫️.restart
         ▫️.update
