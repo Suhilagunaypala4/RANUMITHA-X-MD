@@ -3,7 +3,7 @@ const config = require('../config');
 
 cmd({
     pattern: "owner",
-    react: "✅", 
+    react: "🤵‍♂️", 
     desc: "Get owner number",
     category: "main",
     filename: __filename
@@ -11,11 +11,11 @@ cmd({
 async (conn, mek, m, { from }) => {
     try {
         const ownerNumber = config.OWNER_NUMBER; // Fetch owner number from config
-        const ownerName = HIRUKA RANUMITHA;     // Fetch owner name from config
+        const ownerName = config.OWNER_NAME;     // Fetch owner name from config
 
         const vcard = 'BEGIN:VCARD\n' +
                       'VERSION:3.0\n' +
-                      `FN:HIRUKA RANUMITHA\n` +  
+                      `FN:${ownerName}\n` +  
                       `TEL;type=CELL;type=VOICE;waid=${ownerNumber.replace('+', '')}:${ownerNumber}\n` + 
                       'END:VCARD';
 
@@ -33,7 +33,7 @@ async (conn, mek, m, { from }) => {
             caption: `╭━━〔 *RANUMITHA-X-MD* 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃• *Here is the owner details*
-┃◈┃• *Name* - HIRUKA RANUMITHA
+┃◈┃• *Name* - ${ownerName}
 ┃◈┃• *Number* ${ownerNumber}
 ┃◈┃• *Version*: 2.0.0 Beta
 ┃◈└───────────┈⊷
