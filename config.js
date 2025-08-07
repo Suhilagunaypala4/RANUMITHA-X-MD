@@ -25,6 +25,7 @@ module.exports = {
   CUSTOM_REACT: process.env.CUSTOM_REACT || "false",
   ANTI_DEL_PATH: process.env.ANTI_DEL_PATH || "log",
   STICKER_NAME: process.env.STICKER_NAME || "RANUMITHA-X-MD",
+  OWNER_NAME: process.env.OWNER_NAME || "HIRUKA RANUMITHA",
   OWNER_NUMBER: process.env.OWNER_NUMBER || "94762095304",
   BOT_NAME: process.env.BOT_NAME || "RANUMITHA-X-MD",
   MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/ebcvj0.jpg",
