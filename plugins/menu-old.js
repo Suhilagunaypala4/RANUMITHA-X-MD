@@ -34,7 +34,7 @@ cmd({
 async (conn, mek, m, { from, sender, pushname, reply }) => {
     try {
         const dec = `╭━━━〔 *${config.BOT_NAME} Other Menu* 〕━━━╮
-┃ ✨ *Owner:* ${config.OWNER_NAME}
+┃ ✨ *Owner:* *ᴴᴵᴿᵁᴷᴬ ᴿᴬᴺᵁᴹᴵᵀᴴᴬ*
 ┃ ⚙️ *Mode:* ${config.MODE}
 ┃ 📡 *Platform:* Heroku
 ┃ 🧠 *Type:* NodeJs (Multi Device)
