@@ -63,7 +63,7 @@ Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`;
 
         // Send image with truncated source code
         await conn.sendMessage(from, { 
-            image: { url: `https://github.com/Ranumithaofc/RANU-FILE-S-/blob/main/images/GridArt_Green.jpg` },  // Image URL
+            image: { url: `https://files.catbox.moe/sii1q7.jpg` },  // Image URL
             caption: formattedCode,
             contextInfo: {
                 mentionedJid: [m.sender],
