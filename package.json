@@ -9,7 +9,7 @@
     "restart": "pm2 restart RANUMITHA-X-MD"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "drayyy/XD-Baileys@latest",
+    "@whiskeysockets/baileys": "github:MRSHABAN42/SHABAN-Baileys",
     "pino": "latest",
     "pm2": "latest",
     "util": "^0.12.5",
