@@ -1,6 +1,26 @@
 const { cmd } = require("../command");
 const fetch = require("node-fetch");
 
+// Fake ChatGPT vCard
+const fakevCard = {
+    key: {
+        fromMe: false,
+        participant: "0@s.whatsapp.net",
+        remoteJid: "status@broadcast"
+    },
+    message: {
+        contactMessage: {
+            displayName: "© Mr Hiruka",
+            vcard: `BEGIN:VCARD
+VERSION:3.0
+FN:Meta
+ORG:META AI;
+TEL;type=CELL;type=VOICE;waid=13135550002:+13135550002
+END:VCARD`
+        }
+    }
+};
+
 cmd({
   pattern: 'gitclone',
   alias: ["git"],
@@ -60,7 +80,7 @@ cmd({
           serverMessageId: 143
         }
       }
-    }, { quoted: m });
+    }, { quoted: fakevCard });
 
   } catch (error) {
     console.error("Error:", error);
