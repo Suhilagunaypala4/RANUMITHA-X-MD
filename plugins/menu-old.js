@@ -84,7 +84,7 @@ async (conn, mek, m, { from, sender, pushname, reply }) => {
 
         // Send cool voice note with context
         await conn.sendMessage(from, {
-            audio: { url: 'https://files.catbox.moe/j2t4hm.jpg' },
+            audio: { url: 'https://files.catbox.moe/a43ojv.mp3' },
             mimetype: 'audio/mp4',
             ptt: true,
             contextInfo: {
@@ -97,7 +97,7 @@ async (conn, mek, m, { from, sender, pushname, reply }) => {
                     serverMessageId: 143
                 }
             }
-        }, { quoted: fakevCard });
+        }, { quoted: mek });
 
     } catch (e) {
         console.error(e);
