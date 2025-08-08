@@ -55,7 +55,7 @@ async (conn, mek, m, { from }) => {
 ┃◈┃• *Here is the owner details*
 ┃◈┃• *Name* - ${ownerName}
 ┃◈┃• *Number* ${ownerNumber}
-┃◈┃• *Version*: ${config.OWNVERS}
+┃◈┃• *Version*: ${config.BOT_VERSION}
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
 > © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`, // Display the owner's details
