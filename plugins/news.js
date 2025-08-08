@@ -28,7 +28,7 @@ cmd({
     react: "📰",
     filename: __filename
 },
-async (conn, mek, m, { from, reply }) => {
+async (conn, fakevCard, m, { from, reply }) => {
     try {
         const apiKey="0f2c43ab11324578a7b1709651736382";
         const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`);
@@ -51,7 +51,7 @@ async (conn, mek, m, { from, reply }) => {
 
             if (article.urlToImage) {
                 // Send image with caption
-                await conn.sendMessage(from, { quoted: fakevCard }, { image: { url: article.urlToImage }, caption: message });
+                await conn.sendMessage(from, { image: { url: article.urlToImage }, caption: message });
             } else {
                 // Send text message if no image is available
                 await conn.sendMessage(from, { text: message });
