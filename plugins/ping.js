@@ -22,13 +22,7 @@ async (conn, mek, m, { from, sender, reply }) => {
             react: { text: randomEmoji, key: mek.key }
         });
 
-        const ping = Date.now() - startTime;
-
-        // Speed badge and color
-        let badge 
-        if (ping <= 150) 
-        else if (ping <= 300) 
-        else if (ping <= 600) 
+        const ping = Date.now() - startTime; 
 
         // Final message
         const text = `*Ping:*: _${ping}ms_ ${randomEmoji}*`;
