@@ -39,7 +39,7 @@ async (conn, mek, m, { from, sender, pushname, reply }) => {
 ┃ 📡 *Platform:* Heroku
 ┃ 🧠 *Type:* NodeJs (Multi Device)
 ┃ ⌨️ *Prefix:* ${config.PREFIX}
-┃ 🧾 *Version:* 2.5.6
+┃ 🧾 *Version:* ${config.BOT_VERSION}
 ╰━━━━━━━━━━━━━━━━━━━━━━━━╯
 
 ╭━━〔 🧩 *Command Categories* 〕━━╮
