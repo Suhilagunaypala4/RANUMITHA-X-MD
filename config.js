@@ -28,6 +28,7 @@ module.exports = {
   OWNER_NAME: process.env.OWNER_NAME || "HIRUKA RANUMITHA",
   OWNER_NUMBER: process.env.OWNER_NUMBER || "94762095304",
   BOT_NAME: process.env.BOT_NAME || "RANUMITHA-X-MD",
+  BOT_VERSION: process.env.BOT_VERSION || "3.5.8",
   MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/ebcvj0.jpg",
   DESCRIPTION: process.env.DESCRIPTION || "© Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛",
   ALIVE_IMG: process.env.ALIVE_IMG || "https://raw.githubusercontent.com/Ranumithaofc/RANU-FILE-S-/refs/heads/main/images/GridArt_20250726_193256660.jpg",
