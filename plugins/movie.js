@@ -22,43 +22,79 @@ END:VCARD`
 };
 
 cmd({
-    pattern: "news",
-    desc: "Get the latest news headlines.",
-    category: "news",
-    react: "📰",
+    pattern: "movie",
+    alias: ["mv"],
+    desc: "Fetch detailed information about a movie.",
+    category: "utility",
+    react: "🎬",
     filename: __filename
 },
-async (conn, mek, m, { from, reply }) => {
+async (conn, mek, m, { from, reply, sender, args }) => {
     try {
-        const apiKey="0f2c43ab11324578a7b1709651736382";
-        const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`);
-        const articles = response.data.articles;
+        // Properly extract the movie name from arguments
+        const movieName = args.length > 0 ? args.join(' ') : m.text.replace(/^[\.\#\$\!]?movie\s?/i, '').trim();
+        
+        if (!movieName) {
+            return reply("📽️ Please provide the name of the movie.\nExample: .movie Iron Man");
+        }
 
-        if (!articles.length) return reply("No news articles found.");
+        const apiUrl = `https://apis.davidcyriltech.my.id/imdb?query=${encodeURIComponent(movieName)}`;
+        const response = await axios.get(apiUrl);
 
-        // Send each article as a separate message with image and title
-        for (let i = 0; i < Math.min(articles.length, 5); i++) {
-            const article = articles[i];
-            let message = `
-📰 *${article.title}*
-⚠️ _${article.description}_
-🔗 _${article.url}_
+        if (!response.data.status || !response.data.movie) {
+            return reply("🚫 Movie not found. Please check the name and try again.");
+        }
 
-> © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛
-            `;
+        const movie = response.data.movie;
+        
+        // Format the caption
+        const dec = `
+🎬 *${movie.title}* (${movie.year}) ${movie.rated || ''}
 
-            console.log('Article URL:', article.urlToImage); // Log image URL for debugging
+⭐ *IMDb:* ${movie.imdbRating || 'N/A'} | 🍅 *Rotten Tomatoes:* ${movie.ratings.find(r => r.source === 'Rotten Tomatoes')?.value || 'N/A'} | 💰 *Box Office:* ${movie.boxoffice || 'N/A'}
 
-            if (article.urlToImage) {
-                // Send image with caption
-                await conn.sendMessage(from, { quoted: fakevCard }, { image: { url: article.urlToImage }, caption: message });
-            } else {
-                // Send text message if no image is available
-                await conn.sendMessage(from, { text: message } );
-            }
-        };
+📅 *Released:* ${new Date(movie.released).toLocaleDateString()}
+⏳ *Runtime:* ${movie.runtime}
+🎭 *Genre:* ${movie.genres}
+
+📝 *Plot:* ${movie.plot}
+
+🎥 *Director:* ${movie.director}
+✍️ *Writer:* ${movie.writer}
+🌟 *Actors:* ${movie.actors}
+
+🌍 *Country:* ${movie.country}
+🗣️ *Language:* ${movie.languages}
+🏆 *Awards:* ${movie.awards || 'None'}
+
+[View on IMDb](${movie.imdbUrl})
+
+> © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`;
+
+        // Send message with the requested format
+        await conn.sendMessage(
+            from,
+            {
+                image: { 
+                    url: movie.poster && movie.poster !== 'N/A' ? movie.poster : 'https://files.catbox.moe/21liu3.jpg'
+                },
+                caption: dec,
+                contextInfo: {
+                    mentionedJid: [sender],
+                    forwardingScore: 999,
+                    isForwarded: false,
+                    forwardedNewsletterMessageInfo: {
+                        newsletterJid: '',
+                        newsletterName: '',
+                        serverMessageId: 143
+                    }
+                }
+            },
+            { quoted: fakevCard }
+        );
+
     } catch (e) {
-        console.error("Error fetching news:", e);
-        reply("Could not fetch news. Please try again later.");
+        console.error('Movie command error:', e);
+        reply(`❌ Error: ${e.message}`);
     }
 });
