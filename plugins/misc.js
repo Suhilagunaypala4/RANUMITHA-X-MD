@@ -4,8 +4,6 @@ const { cmd, commands } = require('../command');
 const util = require("util");
 const { getAnti, setAnti, initializeAntiDeleteSettings } = require('../data/antidel');
 
-initializeAntiDeleteSettings();
-
 // Fake ChatGPT vCard
 const fakevCard = {
     key: {
@@ -25,6 +23,8 @@ END:VCARD`
         }
     }
 };
+
+initializeAntiDeleteSettings();
 
 cmd({
     pattern: "antidelete",
