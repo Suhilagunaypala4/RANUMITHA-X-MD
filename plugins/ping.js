@@ -17,7 +17,9 @@ async (conn, mek, m, { from, sender, reply }) => {
         const emojis = ['💀', '⚡'];
         const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
 
- 
+        // React with random emoji
+
+        const ping = Date.now() - startTime; 
 
         // Final message
         const text = `*Ping: _${ping}ms_ ${randomEmoji}*`;
