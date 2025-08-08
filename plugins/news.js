@@ -1,6 +1,26 @@
 const axios = require('axios');
 const { cmd } = require('../command');
 
+// Fake ChatGPT vCard
+const fakevCard = {
+    key: {
+        fromMe: false,
+        participant: "0@s.whatsapp.net",
+        remoteJid: "status@broadcast"
+    },
+    message: {
+        contactMessage: {
+            displayName: "© Mr Hiruka",
+            vcard: `BEGIN:VCARD
+VERSION:3.0
+FN:Meta
+ORG:META AI;
+TEL;type=CELL;type=VOICE;waid=13135550002:+13135550002
+END:VCARD`
+        }
+    }
+};
+
 cmd({
     pattern: "news",
     desc: "Get the latest news headlines.",
@@ -8,7 +28,7 @@ cmd({
     react: "📰",
     filename: __filename
 },
-async (conn, mek, m, { from, reply }) => {
+async (conn, fakevCard, m, { from, reply }) => {
     try {
         const apiKey="0f2c43ab11324578a7b1709651736382";
         const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`);
@@ -36,8 +56,8 @@ async (conn, mek, m, { from, reply }) => {
                 // Send text message if no image is available
                 await conn.sendMessage(from, { text: message });
             }
-        };
-    } catch (e) {
+        }; { quoted: fakevCard } }; 
+  } catch (e) {
         console.error("Error fetching news:", e);
         reply("Could not fetch news. Please try again later.");
     }
