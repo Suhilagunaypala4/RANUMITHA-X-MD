@@ -54,7 +54,7 @@ async (conn, mek, m, { from, reply }) => {
                 await conn.sendMessage(from, { image: { url: article.urlToImage }, caption: message });
             } else {
                 // Send text message if no image is available
-                await conn.sendMessage(from, { text: message }, { quoted: fakevCard });
+                await conn.sendMessage(from, { quoted: fakevCard }, { text: message } );
             }
         };
     } catch (e) {
