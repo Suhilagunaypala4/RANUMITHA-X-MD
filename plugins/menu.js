@@ -84,11 +84,11 @@ let madeMenu = `👋 *ʜᴇʟʟᴏ* ${pushname}
 *╭─「 MENU 」*
 *│* 🐼 *Bot*: *𝐑𝐀𝐍𝐔𝐌𝐈𝐓𝐇𝐀-𝐗-𝐌𝐃*
 *│* 👤 *User*: ${pushname}
-*│* 🤵‍♂ Owner: *ᴴᴵᴿᵁᴷᴬ ᴿᴬᴺᵁᴹᴵᵀᴴᴬ*
-*│* ⏰ Uptime: ${runtime(process.uptime())}
-*│* ⏳ Ram: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${(os.totalmem() / 1024 / 1024).toFixed(2)}MB
-*│* 🫟 Version: ${config.BOT_VERSION}
-*│* 🖊️ Prefix: .
+*│* 🤵‍♂ *Owner*: *ᴴᴵᴿᵁᴷᴬ ᴿᴬᴺᵁᴹᴵᵀᴴᴬ*
+*│* ⏰ *Uptime*: ${runtime(process.uptime())}
+*│* ⏳ *Ram*: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${(os.totalmem() / 1024 / 1024).toFixed(2)}MB
+*│* 🫟  *Version*: ${config.BOT_VERSION}
+*│* 🖊️ *Prefix*: ${config.PREFIX}
 ╰──────────●●► 
 
 👾 Ξ *MAIN COMMANDS:* Ξ
