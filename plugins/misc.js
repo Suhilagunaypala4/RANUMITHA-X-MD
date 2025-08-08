@@ -4,26 +4,6 @@ const { cmd, commands } = require('../command');
 const util = require("util");
 const { getAnti, setAnti, initializeAntiDeleteSettings } = require('../data/antidel');
 
-// Fake ChatGPT vCard
-const fakevCard = {
-    key: {
-        fromMe: false,
-        participant: "0@s.whatsapp.net",
-        remoteJid: "status@broadcast"
-    },
-    message: {
-        contactMessage: {
-            displayName: "© Mr Hiruka",
-            vcard: `BEGIN:VCARD
-VERSION:3.0
-FN:Meta
-ORG:META AI;
-TEL;type=CELL;type=VOICE;waid=13135550002:+13135550002
-END:VCARD`
-        }
-    }
-};
-
 initializeAntiDeleteSettings();
 
 cmd({
@@ -108,16 +88,16 @@ async (conn, mek, m, { from, reply }) => {
             if (quot.message.imageMessage) {
                 let cap = quot.message.imageMessage.caption;
                 let anu = await conn.downloadAndSaveMediaMessage(quot.message.imageMessage);
-                return conn.sendMessage(from, { image: { url: anu }, caption: cap }, { quoted: fakevCard });
+                return conn.sendMessage(from, { image: { url: anu }, caption: cap }, { quoted: mek });
             }
             if (quot.message.videoMessage) {
                 let cap = quot.message.videoMessage.caption;
                 let anu = await conn.downloadAndSaveMediaMessage(quot.message.videoMessage);
-                return conn.sendMessage(from, { video: { url: anu }, caption: cap }, { quoted: fakevCard });
+                return conn.sendMessage(from, { video: { url: anu }, caption: cap }, { quoted: mek });
             }
             if (quot.message.audioMessage) {
                 let anu = await conn.downloadAndSaveMediaMessage(quot.message.audioMessage);
-                return conn.sendMessage(from, { audio: { url: anu } }, { quoted: fakevCard });
+                return conn.sendMessage(from, { audio: { url: anu } }, { quoted: mek });
             }
         }
 
@@ -127,16 +107,16 @@ async (conn, mek, m, { from, reply }) => {
             if (m.quoted.message.imageMessage) {
                 let cap = m.quoted.message.imageMessage.caption;
                 let anu = await conn.downloadAndSaveMediaMessage(m.quoted.message.imageMessage);
-                return conn.sendMessage(from, { image: { url: anu }, caption: cap }, { quoted: fakevCard });
+                return conn.sendMessage(from, { image: { url: anu }, caption: cap }, { quoted: mek });
             }
             else if (m.quoted.message.videoMessage) {
                 let cap = m.quoted.message.videoMessage.caption;
                 let anu = await conn.downloadAndSaveMediaMessage(m.quoted.message.videoMessage);
-                return conn.sendMessage(from, { video: { url: anu }, caption: cap }, { quoted: fakevCard });
+                return conn.sendMessage(from, { video: { url: anu }, caption: cap }, { quoted: mek });
             }
         } else if (m.quoted.message.audioMessage) {
             let anu = await conn.downloadAndSaveMediaMessage(m.quoted.message.audioMessage);
-            return conn.sendMessage(from, { audio: { url: anu } }, { quoted: fakevCard });
+            return conn.sendMessage(from, { audio: { url: anu } }, { quoted: mek });
         } else {
             return reply("This is not a ViewOnce message.");
         }
@@ -145,3 +125,4 @@ async (conn, mek, m, { from, reply }) => {
         reply("An error occurred while fetching the ViewOnce message.");
     }
 });
+ 
