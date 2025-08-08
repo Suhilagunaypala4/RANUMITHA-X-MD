@@ -44,8 +44,29 @@ async (conn, mek, m, { from, reply }) => {
 ⚠️ _${article.description}_
 🔗 _${article.url}_
 
-> © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛
-            `;
+> © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`;
+
+                    // Send message with the requested format
+        await conn.sendMessage(
+            from,
+            {
+                image: { 
+                    url: movie.poster && movie.poster !== 'N/A' ? movie.poster : 'https://files.catbox.moe/21liu3.jpg'
+                },
+                caption: dec,
+                contextInfo: {
+                    mentionedJid: [sender],
+                    forwardingScore: 999,
+                    isForwarded: false,
+                    forwardedNewsletterMessageInfo: {
+                        newsletterJid: '',
+                        newsletterName: '',
+                        serverMessageId: 143
+                    }
+                }
+            },
+            { quoted: fakevCard }
+        );
 
             console.log('Article URL:', article.urlToImage); // Log image URL for debugging
 
