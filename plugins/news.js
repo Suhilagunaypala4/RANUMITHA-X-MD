@@ -55,6 +55,8 @@ async (conn, mek, m, { from, reply }) => {
                 // Send text message if no image is available
                 await conn.sendMessage(from, { text: message });
             } else conn.sendMessage(from, { quoted: mek });
+                        }
+        };
         
     } catch (e) {
         console.error("Error fetching news:", e);
