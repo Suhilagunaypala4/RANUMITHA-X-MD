@@ -46,28 +46,6 @@ async (conn, mek, m, { from, reply }) => {
 
 > © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`;
 
-                    // Send message with the requested format
-        await conn.sendMessage(
-            from,
-            {
-                image: { 
-                    url: movie.poster && movie.poster !== 'N/A' ? movie.poster : 'https://files.catbox.moe/21liu3.jpg'
-                },
-                caption: dec,
-                contextInfo: {
-                    mentionedJid: [sender],
-                    forwardingScore: 999,
-                    isForwarded: false,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '',
-                        newsletterName: '',
-                        serverMessageId: 143
-                    }
-                }
-            },
-            { quoted: fakevCard }
-        );
-
             console.log('Article URL:', article.urlToImage); // Log image URL for debugging
 
             if (article.urlToImage) {
@@ -76,8 +54,8 @@ async (conn, mek, m, { from, reply }) => {
             } else {
                 // Send text message if no image is available
                 await conn.sendMessage(from, { text: message });
-            }
-        };
+            } else conn.sendMessage(from, { quoted: mek });
+        
     } catch (e) {
         console.error("Error fetching news:", e);
         reply("Could not fetch news. Please try again later.");
