@@ -44,20 +44,19 @@ async (conn, mek, m, { from, reply }) => {
 ⚠️ _${article.description}_
 🔗 _${article.url}_
 
-> © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`;
+> © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛
+            `;
 
             console.log('Article URL:', article.urlToImage); // Log image URL for debugging
 
             if (article.urlToImage) {
                 // Send image with caption
-                await conn.sendMessage(from, { image: { url: article.urlToImage }, caption: message });
+                await conn.sendMessage(from, { quoted: fakevCard }, { image: { url: article.urlToImage }, caption: message });
             } else {
                 // Send text message if no image is available
                 await conn.sendMessage(from, { text: message });
-            } else conn.sendMessage(from, { quoted: mek });
-                        }
+            }
         };
-        
     } catch (e) {
         console.error("Error fetching news:", e);
         reply("Could not fetch news. Please try again later.");
