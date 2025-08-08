@@ -87,7 +87,7 @@ let madeMenu = `👋 *ʜᴇʟʟᴏ* ${pushname}
 *│* 🤵‍♂ Owner: *ᴴᴵᴿᵁᴷᴬ ᴿᴬᴺᵁᴹᴵᵀᴴᴬ*
 *│* ⏰ Uptime: ${runtime(process.uptime())}
 *│* ⏳ Ram: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${(os.totalmem() / 1024 / 1024).toFixed(2)}MB
-*│*  🫟 Version: 3.5.8
+*│*  🫟 Version: ${config.BOT_VERSION}
 *│* 🖊️ Prefix: .
 ╰──────────●●► 
 
