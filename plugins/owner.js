@@ -1,6 +1,26 @@
 const { cmd } = require('../command');
 const config = require('../config');
 
+// Fake ChatGPT vCard
+const fakevCard = {
+    key: {
+        fromMe: false,
+        participant: "0@s.whatsapp.net",
+        remoteJid: "status@broadcast"
+    },
+    message: {
+        contactMessage: {
+            displayName: "© Mr Hiruka",
+            vcard: `BEGIN:VCARD
+VERSION:3.0
+FN:Meta
+ORG:META AI;
+TEL;type=CELL;type=VOICE;waid=13135550002:+13135550002
+END:VCARD`
+        }
+    }
+};
+
 cmd({
     pattern: "owner",
     react: "🤵‍♂️", 
@@ -49,7 +69,7 @@ async (conn, mek, m, { from }) => {
                     serverMessageId: 143
                 }            
             }
-        }, { quoted: mek });
+        }, { quoted: fakevCard });
 
         // Send audio as per your request
         await conn.sendMessage(from, {
