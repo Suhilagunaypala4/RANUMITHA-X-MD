@@ -36,7 +36,7 @@ async (conn, mek, m, { from, sender, pushname, reply }) => {
         const dec = `╭━━━〔 *${config.BOT_NAME} Other Menu* 〕━━━╮
 ┃ ✨ *Owner:* HIRUKA RANUMITHA
 ┃ ⚙️ *Mode:* ${config.MODE}
-┃ 📡 *Platform:* Heroku
+┃ 📡 *Platform:* ${os.hostname()}
 ┃ 🧠 *Type:* NodeJs (Multi Device)
 ┃ ⌨️ *Prefix:* ${config.PREFIX}
 ┃ 🧾 *Version:* ${config.BOT_VERSION}
