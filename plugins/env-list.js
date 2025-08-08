@@ -51,6 +51,7 @@ async (conn, mek, m, { from, quoted, reply, isOwner }) => {
 │  ├─∘ *Prefix:* ${config.PREFIX}
 │  ├─∘ *Owner:* ᴴᴵᴿᵁᴷᴬ ᴿᴬᴺᵁᴹᴵᵀᴴᴬ
 │  ├─∘ *Number:* ${config.OWNER_NUMBER}
+│  ├─∘ *Version:* ${config.BOT_VERSION}
 │  └─∘ *Mode:* ${config.MODE.toUpperCase()}
 │
 ├─❏ *⚙️ CORE SETTINGS*
