@@ -25,7 +25,7 @@ async (conn, mek, m, { from, sender, reply }) => {
         const ping = Date.now() - startTime; 
 
         // Final message
-        const text = `*Ping:*: _${ping}ms_ ${randomEmoji}*`;
+        const text = `*Ping:_${ping}ms_${randomEmoji}*`;
 
         await conn.sendMessage(from, {
             text,
