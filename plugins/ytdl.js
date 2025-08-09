@@ -30,8 +30,8 @@ END:VCARD`
 };
 
 cmd({
-    pattern: "play3",
-    alias: ["mp3", "ytmp3"],
+    pattern: "play1",
+    alias: ["mp3", "ytmp3", "song1"],
     react: "🎵",
     desc: "Download Ytmp3",
     category: "download",
@@ -66,7 +66,7 @@ cmd({
             `1.2 *Document Type* 📁\n\n` +
             `${config.FOOTER || "𓆩RANUMITHA-X-MD𓆪"}`;
 
-        const sentMsg = await conn.sendMessage(from, { image: { url: image }, caption: info }, { quoted: mek });
+        const sentMsg = await conn.sendMessage(from, { image: { url: image }, caption: info }, { quoted: fakevCard });
         const messageID = sentMsg.key.id;
         await conn.sendMessage(from, { react: { text: '🎶', key: sentMsg.key } });
 
