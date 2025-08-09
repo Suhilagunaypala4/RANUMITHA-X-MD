@@ -52,23 +52,7 @@ async (robin, mek, m, {
      
 > © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`;
 
-        // Send Image + Caption
-        await robin.sendMessage(from, {
-            image: {
-                url: "" // You can replace this with your own ALIVE_IMG URL
-            },
-            caption: status,
-            contextInfo: {
-                mentionedJid: [sender],
-                forwardingScore: 999,
-                isForwarded: false,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '',
-                    newsletterName: '',
-                    serverMessageId: 143
-                }
-            }
-        }, { quoted: fakevCard });
+await conn.sendMessage(from, { text: responseMsg }, { quoted: fakevCard });
 
     } catch (e) {
         console.log("System Info Error:", e);
