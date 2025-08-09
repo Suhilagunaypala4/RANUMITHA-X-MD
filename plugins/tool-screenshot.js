@@ -53,7 +53,7 @@ cmd({
     // Send initial message
     const loadingMsg = await conn.sendMessage(from, {
         text: "🔄 Starting screenshot capture...\n✦ Please wait..."
-    }, { quoted: fakevCard });
+    }, { quoted: mek });
 
     // Animate loading progress
     for (const frame of loadingBars) {
