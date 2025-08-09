@@ -47,7 +47,7 @@ async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupAd
         let totalAdmins = admins ? admins.length : 0;
         if (totalAdmins === 0) return reply("❌ No admins found in this group.");
 
-        let emojis = ['👑', '⚡', '🌟', '✨', '🎖️', '💎', '🔱', '🛡️', '🚀', '🏆'];
+        let emojis = ['👑', '🎖️', '💎',  '🚀', '🏆'];
         let randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
 
         // Proper message extraction
