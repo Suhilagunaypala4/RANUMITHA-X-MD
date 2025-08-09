@@ -23,7 +23,7 @@ END:VCARD`
 
 cmd({
   pattern: "tiktoksearch",
-  alias: ["tiktoks", "tiks"],
+  alias: ["tiktoks", "tiks", "tts"],
   desc: "Search for TikTok videos using a query.",
   react: '✅',
   category: 'tools',
@@ -60,8 +60,8 @@ cmd({
         + `*• Author*: ${video.author || 'Unknown'}\n`
         + `*• Duration*: ${video.duration || "Unknown"}\n`
         + `*• URL*: ${video.link}
-        
-  > © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`;
+    
+> © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`;
 
       if (video.nowm) {
         await conn.sendMessage(from, {
