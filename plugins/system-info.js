@@ -38,8 +38,7 @@ async (robin, mek, m, {
         await robin.sendPresenceUpdate('recording', from);
 
         // Stylish System info Caption
-       const status = `
-╭─〔 *🍷 SYSTEM INFO 🍷*〕─◉
+       const status = `╭─〔 *🍷 SYSTEM INFO 🍷*〕─◉
 │
 │⏰ *Uptime*: ${runtime(process.uptime())}
 │⏳ *Ram*: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${(os.totalmem() / 1024 / 1024).toFixed(2)}MB
