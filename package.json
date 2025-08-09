@@ -1,6 +1,6 @@
 {
   "name": "RANUMITHA-X-MD",
-  "version": "1.0.0",
+  "version": "3.5.8",
   "description": "A WhatsApp bot created using Node.js",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "util": "^0.12.5",
     "express": "latest",
     "axios": "^1.11.0",
-    "file_size_url": "^1.0.6",
+    "file_size_url": "^1.0.4",
     "fs-extra": "latest",
     "path": "^0.12.7",
     "node-fetch": "^2.6.1",
