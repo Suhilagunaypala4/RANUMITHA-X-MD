@@ -49,7 +49,9 @@ return await conn.sendMessage(from , { text: '*Error !!*' }, { quoted: fakevCard
 }
 var mesaj = '';
 arama.all.map((video) => {
-mesaj += ' *🔥' + video.title + '*\n🔗 ' + video.url '\n\n> © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛'
+mesaj += ' *🔥 + video.title + *\n🔗  + video.url
+    
+> © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛'
 });
 await conn.sendMessage(from , { text:  mesaj }, { quoted: fakevCard } )
 } catch (e) {
