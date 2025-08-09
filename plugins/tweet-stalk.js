@@ -1,26 +1,6 @@
 const { cmd } = require('../command');
 const axios = require('axios');
 
-// Fake ChatGPT vCard
-const fakevCard = {
-    key: {
-        fromMe: false,
-        participant: "0@s.whatsapp.net",
-        remoteJid: "status@broadcast"
-    },
-    message: {
-        contactMessage: {
-            displayName: "© Mr Hiruka",
-            vcard: `BEGIN:VCARD
-VERSION:3.0
-FN:Meta
-ORG:META AI;
-TEL;type=CELL;type=VOICE;waid=13135550002:+13135550002
-END:VCARD`
-        }
-    }
-};
-
 cmd({
   pattern: "xstalk",
   alias: ["twitterstalk", "twtstalk"],
@@ -58,12 +38,12 @@ cmd({
       + `┃📅 *Joined:* ${user.created}\n`
       + `┃🔗 *Profile:* [Click Here](${user.url})\n`
       + `╰━━━⪼\n\n`
-      + `🔹 *Powered BY RANUMITHA-X-MD*`;
+      + `🔹 *Powered BY RANUMITHA-X-MD;
 
     await conn.sendMessage(from, {
       image: { url: user.avatar },
       caption: caption
-    }, { quoted: fakevCard });
+    }, { quoted: m });
 
   } catch (error) {
     console.error("Error:", error);
