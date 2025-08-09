@@ -2,26 +2,6 @@ const converter = require('../data/converter');
 const stickerConverter = require('../data/sticker-converter');
 const { cmd } = require('../command');
 
-// Fake ChatGPT vCard
-const fakevCard = {
-    key: {
-        fromMe: false,
-        participant: "0@s.whatsapp.net",
-        remoteJid: "status@broadcast"
-    },
-    message: {
-        contactMessage: {
-            displayName: "© Mr Hiruka",
-            vcard: `BEGIN:VCARD
-VERSION:3.0
-FN:Meta
-ORG:META AI;
-TEL;type=CELL;type=VOICE;waid=13135550002:+13135550002
-END:VCARD`
-        }
-    }
-};
-
 cmd({
     pattern: 'convert',
     alias: ['sticker2img', 'stoimg', 'stickertoimage', 's2i'],
@@ -34,13 +14,13 @@ cmd({
     if (!message.quoted) {
         return await client.sendMessage(from, {
             text: "✨ *Sticker Converter*\n\nPlease reply to a sticker message\n\nExample: `.convert` (reply to sticker)"
-        }, { quoted: fakevCard });
+        }, { quoted: message });
     }
 
     if (message.quoted.mtype !== 'stickerMessage') {
         return await client.sendMessage(from, {
             text: "❌ Only sticker messages can be converted"
-        }, { quoted: fakevCard });
+        }, { quoted: message });
     }
 
     // Send processing message
@@ -55,15 +35,15 @@ cmd({
         // Send result
         await client.sendMessage(from, {
             image: imageBuffer,
-            caption: "> © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛",
+            caption: "> Powered By WHITESHADOW-MD 👑️",
             mimetype: 'image/png'
-        }, { quoted: fakevCard });
+        }, { quoted: message });
 
     } catch (error) {
         console.error('Conversion error:', error);
         await client.sendMessage(from, {
             text: "❌ Please try with a different sticker."
-        }, { quoted: fakevCard });
+        }, { quoted: message });
     }
 });
 
@@ -78,25 +58,25 @@ cmd({
     if (!match.quoted) {
         return await client.sendMessage(from, {
             text: "*🔊 Please reply to a video/audio message*"
-        }, { quoted: fakevCard });
+        }, { quoted: message });
     }
 
     if (!['videoMessage', 'audioMessage'].includes(match.quoted.mtype)) {
         return await client.sendMessage(from, {
             text: "❌ Only video/audio messages can be converted"
-        }, { quoted: fakevCard });
+        }, { quoted: message });
     }
 
     if (match.quoted.seconds > 300) {
         return await client.sendMessage(from, {
             text: "⏱️ Media too long (max 5 minutes)"
-        }, { quoted: fakevCard });
+        }, { quoted: message });
     }
 
     // Send processing message and store it
     await client.sendMessage(from, {
         text: "🔄 Converting to audio..."
-    }, { quoted: fakevCard });
+    }, { quoted: message });
 
     try {
         const buffer = await match.quoted.download();
@@ -107,13 +87,13 @@ cmd({
         await client.sendMessage(from, {
             audio: audio,
             mimetype: 'audio/mpeg'
-        }, { quoted: fakevCard });
+        }, { quoted: message });
 
     } catch (e) {
         console.error('Conversion error:', e.message);
         await client.sendMessage(from, {
             text: "❌ Failed to process audio"
-        }, { quoted: fakevCard });
+        }, { quoted: message });
     }
 });
 
@@ -128,25 +108,25 @@ cmd({
     if (!match.quoted) {
         return await client.sendMessage(from, {
             text: "*🗣️ Please reply to a video/audio message*"
-        }, { quoted: fakevCard });
+        }, { quoted: message });
     }
 
     if (!['videoMessage', 'audioMessage'].includes(match.quoted.mtype)) {
         return await client.sendMessage(from, {
             text: "❌ Only video/audio messages can be converted"
-        }, { quoted: fakevCard });
+        }, { quoted: message });
     }
 
     if (match.quoted.seconds > 60) {
         return await client.sendMessage(from, {
             text: "⏱️ Media too long for voice (max 1 minute)"
-        }, { quoted: fakevCard });
+        }, { quoted: message });
     }
 
     // Send processing message
     await client.sendMessage(from, {
         text: "🔄 Converting to voice message..."
-    }, { quoted: fakevCard });
+    }, { quoted: message });
 
     try {
         const buffer = await match.quoted.download();
@@ -158,13 +138,13 @@ cmd({
             audio: ptt,
             mimetype: 'audio/ogg; codecs=opus',
             ptt: true
-        }, { quoted: fakevCard });
+        }, { quoted: message });
 
     } catch (e) {
         console.error('PTT conversion error:', e.message);
         await client.sendMessage(from, {
             text: "❌ Failed to create voice message"
-        }, { quoted: fakevCard });
+        }, { quoted: message });
     }
 });
 
