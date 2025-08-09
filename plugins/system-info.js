@@ -26,7 +26,7 @@ END:VCARD`
 cmd({
     pattern: "system",
     alias: ["sinfo", "platform", "systemstatus", "systeminfo"],
-    react: "🌝",
+    react: "🧬",
     desc: "Check bot online or no.",
     category: "main",
     filename: __filename
@@ -49,7 +49,6 @@ async (robin, mek, m, {
 │🤵‍♂ *Owner*: ᴴᴵᴿᵁᴷᴬ ᴿᴬᴺᵁᴹᴵᵀᴴᴬ
 │🧬 *Version*: ${config.BOT_VERSION}
 ╰─────────────────────────────⊷
-     
 > © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`;
 
 await robin.sendMessage(from, { text: status }, { quoted: fakevCard });
