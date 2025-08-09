@@ -52,7 +52,7 @@ async (robin, mek, m, {
      
 > © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛`;
 
-await robin.sendMessage(from, { quoted: fakevCard });
+await robin.sendMessage(from, { text: status }, { quoted: fakevCard });
 
     } catch (e) {
         console.log("System Info Error:", e);
