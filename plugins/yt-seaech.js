@@ -29,7 +29,7 @@ END:VCARD`
 cmd({
     pattern: "yts",
     alias: ["ytsearch"],
-    use: '.yts jawad',
+    use: '.yts ranumitha',
     react: "🔎",
     desc: "Search and get details from youtube.",
     category: "search",
@@ -49,7 +49,7 @@ return await conn.sendMessage(from , { text: '*Error !!*' }, { quoted: fakevCard
 }
 var mesaj = '';
 arama.all.map((video) => {
-mesaj += ' *🔥' + video.title + '*\n🔗 ' + video.url + '> © Powerd by 𝗥𝗔𝗡𝗨𝗠𝗜𝗧𝗛𝗔-𝗫-𝗠𝗗 🌛'
+mesaj += '> *🔥' + video.title + '*\n🔗 ' + video.url + '\n\n'
 });
 await conn.sendMessage(from , { text:  mesaj }, { quoted: fakevCard } )
 } catch (e) {
